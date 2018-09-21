@@ -1,0 +1,1 @@
+controller_joint_names: ['base_joint_self_defined', 'chest_side_joint', 'chest_front_joint', 'left_shoulder_joint', 'left_shoulder2_joint', 'left_elbow_joint', 'left_elbow2_joint', 'left_wrist_joint', 'right_shoulder_joint', 'right_shoulder2_joint', 'right_elbow_joint', 'right_elbow2_joint', 'right_wrist_joint', 'neck_joint', 'head_link', ]

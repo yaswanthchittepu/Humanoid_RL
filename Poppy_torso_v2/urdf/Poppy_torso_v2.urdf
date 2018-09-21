@@ -1,0 +1,874 @@
+<robot
+  name="Poppy_torso_v2">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.004153333342564 -0.0118223612045941 -0.069837604514651"
+        rpy="0 0 0" />
+      <mass
+        value="0.319734241188127" />
+      <inertia
+        ixx="0.000472188921025833"
+        ixy="-7.51858863028018E-06"
+        ixz="-7.66483860109709E-06"
+        iyy="0.000453497282460361"
+        iyz="-2.18210648324942E-05"
+        izz="0.000518438259894843" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="spine">
+    <inertial>
+      <origin
+        xyz="1.33107737011507E-07 -0.00954289245626076 0.0259448296105954"
+        rpy="0 0 0" />
+      <mass
+        value="0.0650979368583488" />
+      <inertia
+        ixx="3.09227832620665E-05"
+        ixy="-2.41559572675692E-10"
+        ixz="-1.06973937949386E-09"
+        iyy="2.88207988705997E-05"
+        iyz="-2.03180935722785E-06"
+        izz="2.1564188430525E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/spine.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/spine.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_joint_self_defined"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.8864E-16 -3.0815E-33 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="spine" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="chest_side">
+    <inertial>
+      <origin
+        xyz="-0.0147496860009198 -0.00970735598527694 -0.000137030837537916"
+        rpy="0 0 0" />
+      <mass
+        value="0.11037279418612" />
+      <inertia
+        ixx="3.01349430766385E-05"
+        ixy="-2.77912007436759E-06"
+        ixz="2.2308660633411E-07"
+        iyy="6.43364191610779E-05"
+        iyz="-6.5673389514138E-08"
+        izz="7.03000768716146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/chest_side.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.890196078431373 0.913725490196078 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/chest_side.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_side_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.00280000000000003 0.0745"
+      rpy="-1.5707963267949 -1.88644366411706E-16 1.5707963267949" />
+    <parent
+      link="spine" />
+    <child
+      link="chest_side" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="chest_front">
+    <inertial>
+      <origin
+        xyz="0.0516284389564188 -1.56640966283007E-06 -0.0120687564654546"
+        rpy="0 0 0" />
+      <mass
+        value="0.212413185651431" />
+      <inertia
+        ixx="0.000548350920248017"
+        ixy="2.65400855333155E-08"
+        ixz="-1.76102337332438E-06"
+        iyy="0.000152789180532853"
+        iyz="-2.66047588298665E-08"
+        izz="0.000486323401788313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/chest_front.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/chest_front.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chest_front_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 2.7756E-16 -1.5708" />
+    <parent
+      link="chest_side" />
+    <child
+      link="chest_front" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_shoulder">
+    <inertial>
+      <origin
+        xyz="-0.00915941514906743 -0.00181696224583762 0.00905845964868317"
+        rpy="0 0 0" />
+      <mass
+        value="0.00964530467137537" />
+      <inertia
+        ixx="2.10531319593993E-06"
+        ixy="1.1061564236355E-08"
+        ixz="-3.39450830845507E-08"
+        iyy="4.0655689552971E-06"
+        iyz="-5.44235701960333E-08"
+        izz="3.88159030402693E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0.0499999999999999 -0.0785 0.00400000000000005"
+      rpy="1.5707963267949 4.92661467177413E-16 -2.77555756156289E-16" />
+    <parent
+      link="chest_front" />
+    <child
+      link="left_shoulder" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_shoulder2">
+    <inertial>
+      <origin
+        xyz="-5.12916590637846E-07 0.013997092641807 -0.00901440721895366"
+        rpy="0 0 0" />
+      <mass
+        value="0.0560816261526276" />
+      <inertia
+        ixx="2.00926661196522E-05"
+        ixy="1.56156233552396E-10"
+        ixz="-1.15054193426659E-09"
+        iyy="1.15236600129741E-05"
+        iyz="3.10765359223317E-07"
+        izz="1.69300488718864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_shoulder2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_shoulder2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.027"
+      rpy="1.5707963267949 -1.66533453693773E-16 1.5707963267949" />
+    <parent
+      link="left_shoulder" />
+    <child
+      link="left_shoulder2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_elbow">
+    <inertial>
+      <origin
+        xyz="0.000134407661343705 -0.010734205757447 0.0580980424897709"
+        rpy="0 0 0" />
+      <mass
+        value="0.112675711717156" />
+      <inertia
+        ixx="0.000184799927868789"
+        ixy="-1.14534033979223E-08"
+        ixz="-5.18008257730134E-07"
+        iyy="0.000181143017641689"
+        iyz="-2.68067658529517E-06"
+        izz="3.1435947185032E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.0426 -0.0185"
+      rpy="-1.5707963267949 -2.25514051876985E-16 0" />
+    <parent
+      link="left_shoulder2" />
+    <child
+      link="left_elbow" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_elbow2">
+    <inertial>
+      <origin
+        xyz="-0.00473150125050942 -0.134709050839494 -0.00503103911482915"
+        rpy="0 0 0" />
+      <mass
+        value="0.124627257833673" />
+      <inertia
+        ixx="0.000397679948700664"
+        ixy="1.66342227382363E-05"
+        ixz="1.34262232458899E-06"
+        iyy="4.52674117747585E-05"
+        iyz="1.86836280303594E-05"
+        izz="0.000374943341565953" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_elbow2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_elbow2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_elbow2_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.00999999999999998 0.1064"
+      rpy="-1.5707963267949 -4.44089209850063E-16 -1.5707963267949" />
+    <parent
+      link="left_elbow" />
+    <child
+      link="left_elbow2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_wrist">
+    <inertial>
+      <origin
+        xyz="0.0664996307275117 0.00468839933138934 -0.0184512352109278"
+        rpy="0 0 0" />
+      <mass
+        value="0.0715967629177807" />
+      <inertia
+        ixx="4.27777177780856E-05"
+        ixy="2.48625199979155E-05"
+        ixz="2.75301406084933E-09"
+        iyy="0.000108120781747354"
+        iyz="3.93878197934243E-10"
+        izz="0.000116113008697731" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/left_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0.0169413570698455 -0.141000000000007 -0.0224799225014185"
+      rpy="-1.5707963267949 1.66533453693773E-16 -1.5707963267949" />
+    <parent
+      link="left_elbow2" />
+    <child
+      link="left_wrist" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_end_effector" />
+  <joint
+    name="left_end_effector_joint"
+    type="fixed">
+    <origin
+      xyz="0.0827906336786532 -0.0267299225014178 -0.0212397767436433"
+      rpy="-1.5707963267949 -1.30104260698252E-18 0" />
+    <parent
+      link="left_wrist" />
+    <child
+      link="left_end_effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_shoulder">
+    <inertial>
+      <origin
+        xyz="-0.00915239215466132 -0.00181626859785421 -0.00905843310136314"
+        rpy="0 0 0" />
+      <mass
+        value="0.00964541698737778" />
+      <inertia
+        ixx="2.10548662935362E-06"
+        ixy="1.02029692239802E-08"
+        ixz="3.35558999287888E-08"
+        iyy="4.06513535627495E-06"
+        iyz="5.44036257258871E-08"
+        izz="3.88132818879036E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0.05 0.0784999999999999 0.00400000000000002"
+      rpy="1.5707963267949 1.66533453693773E-16 -2.77555756156289E-16" />
+    <parent
+      link="chest_front" />
+    <child
+      link="right_shoulder" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_shoulder2">
+    <inertial>
+      <origin
+        xyz="5.12916757067217E-07 -0.0139970926437282 -0.0090144072179727"
+        rpy="0 0 0" />
+      <mass
+        value="0.05608162614809" />
+      <inertia
+        ixx="2.0092666116493E-05"
+        ixy="1.56155941850555E-10"
+        ixz="1.15054204544306E-09"
+        iyy="1.15236600122213E-05"
+        iyz="-3.10765360659994E-07"
+        izz="1.69300488694268E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_shoulder2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.32" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_shoulder2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.027"
+      rpy="1.5707963267949 5.55111512312578E-17 1.5707963267949" />
+    <parent
+      link="right_shoulder" />
+    <child
+      link="right_shoulder2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_elbow">
+    <inertial>
+      <origin
+        xyz="0.000134050057090468 -0.0107342047568474 -0.0580980456796688"
+        rpy="0 0 0" />
+      <mass
+        value="0.112675723709005" />
+      <inertia
+        ixx="0.000184799941144802"
+        ixy="-1.07553437665825E-08"
+        ixz="5.18086975757032E-07"
+        iyy="0.000181143041569846"
+        iyz="2.68068335967206E-06"
+        izz="3.14359602663305E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0426 -0.0184999999999999"
+      rpy="-1.5707963267949 2.22044604925031E-16 1.66533453693774E-16" />
+    <parent
+      link="right_shoulder2" />
+    <child
+      link="right_elbow" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_elbow2">
+    <inertial>
+      <origin
+        xyz="-0.00340868592241036 0.134711247484355 -0.00503043642723321"
+        rpy="0 0 0" />
+      <mass
+        value="0.124625516627974" />
+      <inertia
+        ixx="0.000397680389475006"
+        ixy="-2.12619437612094E-05"
+        ixz="7.26333594597061E-07"
+        iyy="4.57040928235963E-05"
+        iyz="-1.86823324512563E-05"
+        izz="0.000375377777767463" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_elbow2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_elbow2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_elbow2_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.00999999999999998 -0.1064"
+      rpy="-1.5707963267949 1.66533453693773E-16 -1.5707963267949" />
+    <parent
+      link="right_elbow" />
+    <child
+      link="right_elbow2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_wrist">
+    <inertial>
+      <origin
+        xyz="-0.0664993910672015 0.0046883732150699 0.0184512375766644"
+        rpy="0 0 0" />
+      <mass
+        value="0.071596377097844" />
+      <inertia
+        ixx="4.27777222252423E-05"
+        ixy="-2.48617309773565E-05"
+        ixz="2.79460733307498E-09"
+        iyy="0.000108118899559131"
+        iyz="-2.93584200772409E-10"
+        izz="0.00011611121258381" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/right_wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0224386429301544 0.141000000000007 -0.0224799225014181"
+      rpy="-1.5707963267949 -2.77555756156289E-16 -1.5707963267949" />
+    <parent
+      link="right_elbow2" />
+    <child
+      link="right_wrist" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right_end_effector" />
+  <joint
+    name="right_end_effector_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0827906336786532 -0.0267299225014179 0.0212397767436433"
+      rpy="1.5707963267949 -7.11831661085039E-17 3.14159265358979" />
+    <parent
+      link="right_wrist" />
+    <child
+      link="right_end_effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="neck">
+    <inertial>
+      <origin
+        xyz="-0.00147486363195595 -2.29735059432568E-05 0.00934455262566064"
+        rpy="0 0 0" />
+      <mass
+        value="0.00677087390469401" />
+      <inertia
+        ixx="8.34826237691459E-07"
+        ixy="2.31762252256664E-10"
+        ixz="1.06993581973398E-07"
+        iyy="2.96143119089197E-06"
+        iyz="1.78774539484968E-11"
+        izz="2.68691929886332E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_joint"
+    type="revolute">
+    <origin
+      xyz="0.0839399999999999 0 0.004979922501418"
+      rpy="-1.5707963267949 2.22044604925031E-16 -1.5707963267949" />
+    <parent
+      link="chest_front" />
+    <child
+      link="neck" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="head">
+    <inertial>
+      <origin
+        xyz="-0.0235262061888786 -0.0273909853664452 -6.67430958651433E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.216375491541073" />
+      <inertia
+        ixx="0.000453887062747377"
+        ixy="-2.25722146081784E-05"
+        ixz="-2.47613048704635E-06"
+        iyy="0.000473881282434402"
+        iyz="-3.20082275524551E-07"
+        izz="0.000401890028179119" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.796078431372549 0.823529411764706 0.937254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Poppy_torso_v2/meshes/head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_link"
+    type="revolute">
+    <origin
+      xyz="0 -2.00774985820041E-05 0.02006"
+      rpy="-1.5707963267949 3.35406100611928E-16 -1.5707963267949" />
+    <parent
+      link="neck" />
+    <child
+      link="head" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
