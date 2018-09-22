@@ -102,7 +102,7 @@
 
         <body name="base_link" pos="0 0 0.1">
             <inertial pos="-0.00415333 -0.0118224 -0.0698376" quat="0.484397 0.465231 -0.656778 0.342874" mass="0.319734" diaginertia="0.000525595 0.000474838 0.000443692" />
-            <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="base_link" />
+            <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="base_link" contype='0' conaffinity='6'/>
             <body name="spine" pos="0 0 0">
                 <inertial pos="1.33108e-07 -0.00954289 0.0259448" quat="0.991868 -0.127274 5.64411e-05 4.41588e-06" mass="0.0650979" diaginertia="3.09228e-05 2.9351e-05 2.1034e-05" />
                 <joint damping="0.1" stiffness="1.0" name="base_joint_self_defined" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
@@ -114,7 +114,7 @@
                     <body name="chest_front" pos="0 0 0" quat="0.499998 -0.5 0.500002 -0.5">
                         <inertial pos="0.0516284 -1.56641e-06 -0.0120688" quat="0.707008 0.707063 0.0100506 -0.0100026" mass="0.212413" diaginertia="0.000548401 0.000486273 0.000152789" />
                         <joint damping="0.1" stiffness="1.0" name="chest_front_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.698132 0.698132" />
-                        <geom type="mesh" rgba="1 1 1 0.32" mesh="chest_front" />
+                        <geom type="mesh" rgba="1 1 1 0.32" mesh="chest_front" contype='0' conaffinity='6'/>
                         <body name="left_shoulder" pos="0.05 -0.0785 0.004" quat="0.707107 0.707107 0 0">
                             <inertial pos="-0.00915942 -0.00181696 0.00905846" quat="0.568841 0.42591 0.555994 0.431151" mass="0.0096453" diaginertia="4.08066e-06 3.8672e-06 2.10461e-06" />
                             <joint damping="0.1" stiffness="1.0" name="left_shoulder_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.70526" />
