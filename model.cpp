@@ -77,13 +77,13 @@ public:
 		lasty = 0;
 
 	    	// activate software
-	 	mj_activate("/home/phani/mjpro150/bin/mjkey.txt");	
+	 	mj_activate("/home/chronos/.mujoco/mjpro150/bin/mjkey.txt");	
 		precision = set_precision;
 		chain  = set_chain;
 		stable = 1;
 		action_bound[0]=-0.08, action_bound[1]=0.08;
-		action_dim = 13;
-		state_dim = 28;
+		action_dim = 15;
+		state_dim = 29;
 		flip = 0;
 		graphics_mode = set_grap_mode;
 		angle_bound.clear();
@@ -121,7 +121,7 @@ public:
 
 	    // load and compile model
 	    char error[1000] = "Could not load binary model";
-	    m = mj_loadXML("/home/phani/mjpro150/model/new_model.xml", 0, error, 1000);
+	    m = mj_loadXML("/home/chronos/.mujoco/mjpro150/model/Poppy_torso_v2.xml", 0, error, 1000);
 	    // char error[1000] = "Could not load binary model";
 	    // if( strlen(argv[1])>4 && !strcmp(argv[1]+strlen(argv[1])-4, ".mjb") )
 	    //     m = mj_loadModel(argv[1], 0);
@@ -171,11 +171,73 @@ public:
 
 	}
 	
+	void space_sample()
+	{
+		double base_joint_range[2] = {-1.57079632679, 1.57079632679};
+		double chest_side_joint_range[2] = {-1.16937059884, 0.471238898038};
+		double chest_front_joint_range[2] = {-0.698131700798, 0.698131700798};
+		double left_shoulder_joint_range[2] = {-2.09439510239, 2.70526034059};
+		double left_shoulder2_joint_range[2] = {-1.83259571459, 1.91986217719};
+		double left_elbow_joint_range[2] = {-1.83259571459, 1.83259571459};
+		double left_elbow2_joint_range[2] = {-2.58308729295, 0.0174532925199};
+		double left_wrist_joint_range[2] = {0.00, 1.57079632679};
+		double neck_joint_range[2] = {-1.57079632679, 1.57079632679};
+		double head_joint_range[2] = {-0.785398163397, 0.10471975512};
+		double right_shoulder_joint_range[2] = {-2.70526034059, 2.09439510239};
+		double right_shoulder2_joint_range[2] = {-1.91986217719, 1.83259571459};
+		double right_elbow_joint_range[2] = {-1.83259571459, 1.83259571459};
+		double right_elbow2_joint_range[2] = {-0.0174532925199, 2.58308729295};
+		double right_wrist_joint_range[2] = {-1.57079632679, 0.00};
+
+		double base_joint_angle = fRand(base_joint_range[0],base_joint_range[1]);
+		double chest_side_joint_angle = fRand(chest_side_joint_range[0],chest_side_joint_range[1]);
+		double chest_front_joint_angle = fRand(chest_front_joint_range[0],chest_front_joint_range[1]);
+		double left_shoulder_joint_angle = fRand(left_shoulder_joint_range[0],left_shoulder_joint_range[1]);
+		double left_shoulder2_joint_angle = fRand(left_shoulder2_joint_range[0],left_shoulder2_joint_range[1]);
+		double left_elbow_joint_angle = fRand(left_elbow_joint_range[0],left_elbow_joint_range[1]);
+		double left_elbow2_joint_angle = fRand(left_elbow2_joint_range[0],left_elbow2_joint_range[1]);
+		double left_wrist_joint_angle = fRand(left_wrist_joint_range[0],left_wrist_joint_range[1]);
+		double neck_joint_angle = fRand(neck_joint_range[0],neck_joint_range[1]);
+		double head_joint_angle = fRand(head_joint_range[0],head_joint_range[1]);
+		double right_shoulder_joint_angle = fRand(right_shoulder_joint_range[0],right_shoulder_joint_range[1]);
+		double right_shoulder2_joint_angle = fRand(right_shoulder2_joint_range[0],right_shoulder2_joint_range[1]);
+		double right_elbow_joint_angle = fRand(right_elbow_joint_range[0],right_elbow_joint_range[1]);
+		double right_elbow2_joint_angle = fRand(right_elbow2_joint_range[0],right_elbow2_joint_range[1]);
+		double right_wrist_joint_angle = fRand(right_wrist_joint_range[0],right_wrist_joint_range[1]);
+
+		d->ctrl[0] = base_joint_angle;
+		d->ctrl[1] = chest_side_joint_angle;
+		d->ctrl[2] = chest_front_joint_angle;
+		d->ctrl[3] = left_shoulder_joint_angle;
+		d->ctrl[4] = left_shoulder2_joint_angle;
+		d->ctrl[5] = left_elbow_joint_angle;
+		d->ctrl[6] = left_elbow2_joint_angle;
+		d->ctrl[7] = left_wrist_joint_angle;
+		d->ctrl[8] = neck_joint_angle;
+		d->ctrl[9] = head_joint_angle;
+		d->ctrl[10] = right_shoulder_joint_angle;
+		d->ctrl[11] = right_shoulder2_joint_angle;
+		d->ctrl[12] = right_elbow_joint_angle;
+		d->ctrl[13] = right_elbow2_joint_angle;
+		d->ctrl[14] = right_wrist_joint_angle;
+
+		mj_forward(m,d);
+
+		for(int i=0;i<3;i++)
+		{
+			goal[0][i] = d->site_xpos[0*3+i];
+		}
+
+		for(int i=0;i<3;i++)
+		{
+			goal[1][i] = d->site_xpos[1*3+i];
+		}
+	}
 
 	void table_sample()
 	{
 
-		/*double height_z[2] = {0.525, 0.72};
+		double height_z[2] = {0.525, 0.72};
 		double yx_start[2] = {-0.25,-0.275};
 		double yx_end[2] = {0.1, -0.125};
 	
@@ -190,24 +252,7 @@ public:
 
 		goal[0][0] = goal[1][0] = obj_center_x;
 		goal[1][1] = obj_center_y - 0.025; // left 	
-		goal[0][1] = obj_center_y + 0.025; //right*/
-
-		double base_joint_range[2] = {-1.57079632679, 1.57079632679}
-		double chest_side_joint_range[2] = {-1.16937059884, 0.471238898038}
-		double chest_front_joint_range[2] = {-0.698131700798, 0.698131700798}
-		double left_shoulder_joint_range[2] = {-2.09439510239, 2.70526034059}
-		double left_shoulder2_joint_range[2] = {-1.83259571459, 1.91986217719}
-		double left_elbow_joint_range[2] = {-1.83259571459, 1.83259571459}
-		double left_elbow2_joint_range[2] = {-2.58308729295, 0.0174532925199}
-		double left_wrist_joint_range[2] = {0.00, 1.57079632679}
-		double neck_joint_range[2] = {-1.57079632679, 1.57079632679}
-		double head_joint_range[2] = {-0.785398163397, 0.10471975512}
-		double right_shoulder_joint_range[2] = {-2.70526034059, 2.09439510239}
-		double right_shoulder2_joint_range[2] = {-1.91986217719, 1.83259571459}
-		double right_elbow_joint_range[2] = {-1.83259571459, 1.83259571459}
-		double right_elbow2_joint_range[2] = {-0.0174532925199, 2.58308729295}
-		double right_wrist_joint_range[2] = {-1.57079632679, 0.00}
-
+		goal[0][1] = obj_center_y + 0.025; //right
 	}
 
 	void sphere_sample()
@@ -248,13 +293,13 @@ public:
             //sphere_sample();
 	
 	    //Set Box goals
-	    table_sample();   
+	    space_sample();   
 
 	    //Start Simulation
 	    mj_step(m,d);
    
 	     
-	    double act[13] = {0};
+	    double act[15] = {0};
 	    
 	    /*if(d->site_xpos[8]>0.008)
 			stable = 0;
@@ -370,13 +415,13 @@ public:
 		// cout<<d->site_xpos[6]<<' '<<d->site_xpos[7]<<' '<<d->site_xpos[8]<<endl;
 		
 		// site2 - left leg
-		if(d->site_xpos[8]>0.008){
+		/*if(d->site_xpos[8]>0.008){
 			stable = 0;
 			reward[0] = -30;
 			reward[1] = -30;
 			return ;
 
-		}
+		}*/
 
 		if(dist<prec_bound){
 
@@ -441,7 +486,7 @@ public:
 	}
 
 
-	double* Step(double action[13])
+	double* Step(double action[15])
 	{
 
 
@@ -454,9 +499,9 @@ public:
 	        //  this loop will finish on time for the next frame to be rendered at 60 fps.
 	        //  Otherwise add a cpu timer and exit this loop when it is time to render.
 	        mjtNum simstart = d->time;
-	        for (int i=0;i<13;i++){
-	            d->ctrl[6+i]+=action[i];
-	            d->ctrl[6+i] = clip(d->ctrl[6+i], 6+i);
+	        for (int i=0;i<15;i++){
+	            d->ctrl[i]+=action[i];
+	            d->ctrl[i] = clip(d->ctrl[i],i);
 	        }
 	        
 		
