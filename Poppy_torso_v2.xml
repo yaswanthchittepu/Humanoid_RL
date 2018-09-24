@@ -105,35 +105,35 @@
             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="base_link" contype='0' conaffinity='6'/>
             <body name="spine" pos="0 0 0">
                 <inertial pos="1.33108e-07 -0.00954289 0.0259448" quat="0.991868 -0.127274 5.64411e-05 4.41588e-06" mass="0.0650979" diaginertia="3.09228e-05 2.9351e-05 2.1034e-05" />
-                <joint damping="0.1" stiffness="1.0" name="base_joint_self_defined" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
+                <joint damping="1.0" stiffness="1.0" name="base_joint_self_defined" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
                 <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="spine" />
                 <body name="chest_side" pos="0 0.0028 0.0745" quat="0.5 -0.5 -0.5 0.5">
                     <inertial pos="-0.0147497 -0.00970736 -0.000137031" quat="-0.0335079 0.708618 0.0233979 0.704407" mass="0.110373" diaginertia="7.03025e-05 6.45596e-05 2.99094e-05" />
-                    <joint damping="0.1" stiffness="1.0" name="chest_side_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.16937 0.471239" />
+                    <joint damping="1.0" stiffness="1.0" name="chest_side_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.16937 0.471239" />
                     <geom type="mesh" rgba="0.890196 0.913725 0.929412 1" mesh="chest_side" />
                     <body name="chest_front" pos="0 0 0" quat="0.499998 -0.5 0.500002 -0.5">
                         <inertial pos="0.0516284 -1.56641e-06 -0.0120688" quat="0.707008 0.707063 0.0100506 -0.0100026" mass="0.212413" diaginertia="0.000548401 0.000486273 0.000152789" />
-                        <joint damping="0.1" stiffness="1.0" name="chest_front_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.698132 0.698132" />
+                        <joint damping="1.0" stiffness="1.0" name="chest_front_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.698132 0.698132" />
                         <geom type="mesh" rgba="1 1 1 0.32" mesh="chest_front" contype='0' conaffinity='6'/>
                         <body name="left_shoulder" pos="0.05 -0.0785 0.004" quat="0.707107 0.707107 0 0">
                             <inertial pos="-0.00915942 -0.00181696 0.00905846" quat="0.568841 0.42591 0.555994 0.431151" mass="0.0096453" diaginertia="4.08066e-06 3.8672e-06 2.10461e-06" />
-                            <joint damping="0.1" stiffness="1.0" name="left_shoulder_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.70526" />
+                            <joint damping="1.0" stiffness="1.0" name="left_shoulder_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.0944 2.70526" />
                             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_shoulder" />
                             <body name="left_shoulder2" pos="0 0 0.027" quat="0.5 0.5 0.5 0.5">
                                 <inertial pos="-5.12917e-07 0.0139971 -0.00901441" quat="0.727048 0.686586 0.000133801 -0.000122883" mass="0.0560816" diaginertia="2.00927e-05 1.69479e-05 1.15059e-05" />
-                                <joint damping="0.1" stiffness="1.0" name="left_shoulder2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.91986" />
+                                <joint damping="1.0" stiffness="1.0" name="left_shoulder2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.91986" />
                                 <geom type="mesh" rgba="1 1 1 0.32" mesh="left_shoulder2" />
                                 <body name="left_elbow" pos="0 0.0426 -0.0185" quat="0.707107 -0.707107 0 0">
                                     <inertial pos="0.000134408 -0.0107342 0.058098" quat="0.999958 -0.00894963 0.00168589 -0.000317049" mass="0.112676" diaginertia="0.000184802 0.000181191 3.13862e-05" />
-                                    <joint damping="0.1" stiffness="1.0" name="left_elbow_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.8326" />
+                                    <joint damping="1.0" stiffness="1.0" name="left_elbow_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.8326" />
                                     <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="left_elbow" />
                                     <body name="left_elbow2" pos="0 -0.01 0.1064" quat="0.5 -0.5 0.5 -0.5">
                                         <inertial pos="-0.0047315 -0.134709 -0.00503104" quat="0.724758 0.686794 -0.0174064 0.0523091" mass="0.124627" diaginertia="0.00039868 0.00037577 4.34404e-05" />
-                                        <joint damping="0.1" stiffness="1.0" name="left_elbow2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.58309 0.0174533" />
+                                        <joint damping="1.0" stiffness="1.0" name="left_elbow2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.58309 0.0174533" />
                                         <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_elbow2" />
                                         <body name="left_wrist" pos="0.0169414 -0.141 -0.0224799" quat="0.5 -0.5 0.5 -0.5">
                                             <inertial pos="0.0664996 0.0046884 -0.0184512" quat="0.573688 0.575024 0.411537 0.41336" mass="0.0715968" diaginertia="0.000116505 0.000116113 3.43935e-05" />
-                                            <joint damping="0.1" stiffness="1.0" name="left_wrist_joint" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.5708" />
+                                            <joint damping="1.0" stiffness="1.0" name="left_wrist_joint" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.5708" />
                                             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="left_wrist" />
                                             <site name="left_end_effector" pos="0.0827906 -0.0267299 -0.0212398" quat="0.707107 -0.707107 0 0" size="0.0003" rgba="0 1 1 1"/>
                                         </body>
@@ -143,23 +143,23 @@
                         </body>
                         <body name="right_shoulder" pos="0.05 0.0785 0.004" quat="0.707107 0.707107 0 0">
                             <inertial pos="-0.00915239 -0.00181627 -0.00905843" quat="0.425819 0.568703 0.431216 0.556154" mass="0.00964542" diaginertia="4.08021e-06 3.86693e-06 2.10481e-06" />
-                            <joint damping="0.1" stiffness="1.0" name="right_shoulder_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.70526 2.0944" />
+                            <joint damping="1.0" stiffness="1.0" name="right_shoulder_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-2.70526 2.0944" />
                             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_shoulder" />
                             <body name="right_shoulder2" pos="0 0 -0.027" quat="0.5 0.5 0.5 0.5">
                                 <inertial pos="5.12917e-07 -0.0139971 -0.00901441" quat="0.686586 0.727048 -0.000122883 0.000133801" mass="0.0560816" diaginertia="2.00927e-05 1.69479e-05 1.15059e-05" />
-                                <joint damping="0.1" stiffness="1.0" name="right_shoulder2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.91986 1.8326" />
+                                <joint damping="1.0" stiffness="1.0" name="right_shoulder2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.91986 1.8326" />
                                 <geom type="mesh" rgba="1 1 1 0.32" mesh="right_shoulder2" />
                                 <body name="right_elbow" pos="0 -0.0426 -0.0185" quat="0.707107 -0.707107 0 0">
                                     <inertial pos="0.00013405 -0.0107342 -0.058098" quat="0.999959 0.00894948 -0.00168698 -0.000220207" mass="0.112676" diaginertia="0.000184802 0.000181191 3.13862e-05" />
-                                    <joint damping="0.1" stiffness="1.0" name="right_elbow_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.8326" />
+                                    <joint damping="1.0" stiffness="1.0" name="right_elbow_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.8326 1.8326" />
                                     <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_elbow" />
                                     <body name="right_elbow2" pos="0 -0.01 -0.1064" quat="0.5 -0.5 0.5 -0.5">
                                         <inertial pos="-0.00340869 0.134711 -0.00503044" quat="0.687 0.724816 -0.051169 0.00731963" mass="0.124626" diaginertia="0.00039911 0.00037627 4.33817e-05" />
-                                        <joint damping="0.1" stiffness="1.0" name="right_elbow2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0174533 2.58309" />
+                                        <joint damping="1.0" stiffness="1.0" name="right_elbow2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0174533 2.58309" />
                                         <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_elbow2" />
                                         <body name="right_wrist" pos="-0.0224386 0.141 -0.0224799" quat="0.5 -0.5 0.5 -0.5">
                                             <inertial pos="-0.0664994 0.00468837 0.0184512" quat="0.413301 0.411596 0.574982 0.57373" mass="0.0715964" diaginertia="0.000116503 0.000116111 3.43938e-05" />
-                                            <joint damping="0.1" stiffness="1.0" name="right_wrist_joint" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.5708" />
+                                            <joint damping="1.0" stiffness="1.0" name="right_wrist_joint" pos="0 0 0" axis="0 0 1" limited="true" range="0 1.5708" />
                                             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="right_wrist" />
                                             <site name="right_end_effector" pos="-0.0827906 -0.0267299 0.0212398" quat="0 0 0.707107 0.707107" size="0.0003" rgba="0 1 1 1"/>
                                         </body>
@@ -169,11 +169,11 @@
                         </body>
                         <body name="neck" pos="0.08394 0 0.00497992" quat="0.5 -0.5 0.5 -0.5">
                             <inertial pos="-0.00147486 -2.29735e-05 0.00934455" quat="0.485416 0.514226 0.514114 0.485417" mass="0.00677087" diaginertia="2.96143e-06 2.69308e-06 8.28666e-07" />
-                            <joint damping="0.1" stiffness="1.0" name="neck_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
+                            <joint damping="1.0" stiffness="1.0" name="neck_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-1.5708 1.5708" />
                             <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="neck" />
                             <body name="head" pos="0 -2.00775e-05 0.02006" quat="0.5 -0.5 0.5 -0.5">
                                 <inertial pos="-0.0235262 -0.027391 -6.67431e-05" quat="0.476092 0.0197803 0.0233882 0.878862" mass="0.216375" diaginertia="0.000488585 0.000439332 0.000401741" />
-                                <joint damping="0.1" stiffness="1.0" name="head_link" pos="0 0 0" axis="0 0 1" limited="true" range="-0.785398 0.10472" />
+                                <joint damping="1.0" stiffness="1.0" name="head_link" pos="0 0 0" axis="0 0 1" limited="true" range="-0.785398 0.10472" />
                                 <geom type="mesh" rgba="0.796078 0.823529 0.937255 1" mesh="head" />
                             </body>
                         </body>
@@ -184,21 +184,21 @@
     </worldbody>
 
     <actuator>
-        <position ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679"  gear="1"  kp = "150" joint="base_joint_self_defined"/>
-        <position ctrllimited="true" ctrlrange="-1.16937059884 0.471238898038"  gear="1"  kp = "150" joint="chest_side_joint"/>
-        <position ctrllimited="true" ctrlrange="-0.698131700798 0.698131700798"  gear="1"  kp = "150" joint="chest_front_joint"/>
-        <position ctrllimited="true" ctrlrange="-2.09439510239 2.70526034059"  gear="1"  kp = "150" joint="left_shoulder_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.83259571459 1.91986217719"  gear="1"  kp = "150" joint="left_shoulder2_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.83259571459 1.83259571459"  gear="1"  kp = "150" joint="left_elbow_joint"/>
-        <position ctrllimited="true" ctrlrange="-2.58308729295 0.0174532925199" gear="1"   kp = "150" joint="left_elbow2_joint"/>
-        <position ctrllimited="true" ctrlrange="0.00 1.57079632679"  gear="1"  kp = "150" joint="left_wrist_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679"  gear="1"  kp = "150" joint="neck_joint"/>
-        <position ctrllimited="true" ctrlrange="-0.785398163397 0.10471975512"  gear="1"  kp = "150" joint="head_link"/>
-        <position ctrllimited="true" ctrlrange="-2.70526034059 2.09439510239"  gear="1"  kp = "150" joint="right_shoulder_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.91986217719 1.83259571459"  gear="1"  kp = "150" joint="right_shoulder2_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.83259571459 1.83259571459"  gear="1"   kp = "150" joint="right_elbow_joint"/>
-        <position ctrllimited="true" ctrlrange="-0.0174532925199 2.58308729295"  gear="1"  kp = "150" joint="right_elbow2_joint"/>
-        <position ctrllimited="true" ctrlrange="-1.57079632679 0.00"  gear="1"  kp = "150" joint="right_wrist_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679"  gear="1"  kp = "250" joint="base_joint_self_defined"/>
+        <position ctrllimited="true" ctrlrange="-1.16937059884 0.471238898038"  gear="1"  kp = "250" joint="chest_side_joint"/>
+        <position ctrllimited="true" ctrlrange="-0.698131700798 0.698131700798"  gear="1"  kp = "250" joint="chest_front_joint"/>
+        <position ctrllimited="true" ctrlrange="-2.09439510239 2.70526034059"  gear="1"  kp = "250" joint="left_shoulder_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.83259571459 1.91986217719"  gear="1"  kp = "250" joint="left_shoulder2_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.83259571459 1.83259571459"  gear="1"  kp = "250" joint="left_elbow_joint"/>
+        <position ctrllimited="true" ctrlrange="-2.58308729295 0.0174532925199" gear="1"   kp = "250" joint="left_elbow2_joint"/>
+        <position ctrllimited="true" ctrlrange="0.00 1.57079632679"  gear="1"  kp = "250" joint="left_wrist_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.57079632679 1.57079632679"  gear="1"  kp = "250" joint="neck_joint"/>
+        <position ctrllimited="true" ctrlrange="-0.785398163397 0.10471975512"  gear="1"  kp = "250" joint="head_link"/>
+        <position ctrllimited="true" ctrlrange="-2.70526034059 2.09439510239"  gear="1"  kp = "250" joint="right_shoulder_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.91986217719 1.83259571459"  gear="1"  kp = "250" joint="right_shoulder2_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.83259571459 1.83259571459"  gear="1"   kp = "250" joint="right_elbow_joint"/>
+        <position ctrllimited="true" ctrlrange="-0.0174532925199 2.58308729295"  gear="1"  kp = "250" joint="right_elbow2_joint"/>
+        <position ctrllimited="true" ctrlrange="-1.57079632679 0.00"  gear="1"  kp = "250" joint="right_wrist_joint"/>
     </actuator>
 
 </mujoco>
