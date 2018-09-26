@@ -86,11 +86,15 @@ public:
 		state_dim = 29;
 		flip = 0;
 		graphics_mode = set_grap_mode;
+	 	// Change the angle limits here
 		angle_bound.clear();
-		vector<double> tmp_vec = {-1.070719,-1.460350,-0.917321,-0.380427,-2.144505,-0.386563,-0.523599,-0.610865,-1.221730,-0.523599,-0.349066,-3.126253,-0.017453,-1.396263,-1.919862,-3.126253,-3.141593,-1.396263,-1.919862,-0.386563,-2.144505,-1.920544,-0.003068,-0.380427,-1.070719 };
-		angle_bound.push_back(tmp_vec);
-		vector<double> tmp_vec1 = {1.230253,0.380427,0.003068,1.920544,1.920544,0.380427,0.785398,0.610865,1.221730,0.785398,0.349066,3.071030,3.141593,1.396263,-0.017453,3.071030,0.017453,1.396263,-0.017453,0.380427,1.920544,0.380427,0.917321,1.460350,1.230253}; 
-
+	 	// Lower Bounds
+		//vector<double> tmp_vec = {-1.070719,-1.460350,-0.917321,-0.380427,-2.144505,-0.386563,-0.523599,-0.610865,-1.221730,-0.523599,-0.349066,-3.126253,-0.017453,-1.396263,-1.919862,-3.126253,-3.141593,-1.396263,-1.919862,-0.386563,-2.144505,-1.920544,-0.003068,-0.380427,-1.070719 };
+		vector<double> tmp_vec = {-1.57079632679 -1.16937059884 -0.698131700798 -2.09439510239 -1.83259571459 -1.83259571459 -2.58308729295 0.00 -1.57079632679 -0.785398163397 -2.70526034059 -1.91986217719 -1.83259571459 -0.0174532925199 -1.57079632679};
+	 	angle_bound.push_back(tmp_vec);
+	 	// Upper Bounds
+		//vector<double> tmp_vec1 = {1.230253,0.380427,0.003068,1.920544,1.920544,0.380427,0.785398,0.610865,1.221730,0.785398,0.349066,3.071030,3.141593,1.396263,-0.017453,3.071030,0.017453,1.396263,-0.017453,0.380427,1.920544,0.380427,0.917321,1.460350,1.230253};
+	 	vector<double> tmp_vec = {1.57079632679 0.471238898038 0.698131700798 2.70526034059 1.91986217719 1.83259571459 0.0174532925199 1.57079632679 1.57079632679 0.10471975512 2.09439510239 1.83259571459 1.83259571459 2.58308729295 0.00}
 
 		angle_bound.push_back(tmp_vec1);
 		//angle_bound = new int[][]{{-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1  } , {1,1,1,1,1,1,1,1,1,1,1,1,1}};
@@ -234,48 +238,48 @@ public:
 		}
 	}
 
-	void table_sample()
-	{
+// 	void table_sample()
+// 	{
 
-		double height_z[2] = {0.525, 0.72};
-		double yx_start[2] = {-0.25,-0.275};
-		double yx_end[2] = {0.1, -0.125};
+// 		double height_z[2] = {0.525, 0.72};
+// 		double yx_start[2] = {-0.25,-0.275};
+// 		double yx_end[2] = {0.1, -0.125};
 	
-		goal[0][2] = goal[1][2] = height_z[flip];
-		double obj_center_y = fRand(yx_start[0], yx_end[0]);	
-		double obj_center_x = fRand(yx_start[1], yx_end[1]);
+// 		goal[0][2] = goal[1][2] = height_z[flip];
+// 		double obj_center_y = fRand(yx_start[0], yx_end[0]);	
+// 		double obj_center_x = fRand(yx_start[1], yx_end[1]);
 		
-		m->body_pos[28*3-3] = obj_center_x;
-		m->body_pos[28*3-2] = obj_center_y;
-		m->body_pos[28*3-1] = height_z[flip];
-		//cout << height_z[flip] << endl;
+// 		m->body_pos[28*3-3] = obj_center_x;
+// 		m->body_pos[28*3-2] = obj_center_y;
+// 		m->body_pos[28*3-1] = height_z[flip];
+// 		//cout << height_z[flip] << endl;
 
-		goal[0][0] = goal[1][0] = obj_center_x;
-		goal[1][1] = obj_center_y - 0.025; // left 	
-		goal[0][1] = obj_center_y + 0.025; //right
-	}
+// 		goal[0][0] = goal[1][0] = obj_center_x;
+// 		goal[1][1] = obj_center_y - 0.025; // left 	
+// 		goal[0][1] = obj_center_y + 0.025; //right
+// 	}
 
-	void sphere_sample()
-	{
-		double hlimit_z[2]={0.5, 0.70};
-		double YX_start[2] = {-0.25,-0.275};
-		double YX_end[2] = {0.1, -0.105};
-                double sph_center_y= fRand(YX_start[0], YX_end[0]);//-0.01*goal[1][1];
+// 	void sphere_sample()
+// 	{
+// 		double hlimit_z[2]={0.5, 0.70};
+// 		double YX_start[2] = {-0.25,-0.275};
+// 		double YX_end[2] = {0.1, -0.105};
+//                 double sph_center_y= fRand(YX_start[0], YX_end[0]);//-0.01*goal[1][1];
                               
-		double sph_center_x = fRand(YX_start[1], YX_end[1]);
-                while(sph_center_y == goal[1][1] && sph_center_x == goal[1][0])
-                   {
-                     sph_center_y = fRand(YX_start[0], YX_end[0]);
-                     sph_center_x = fRand(YX_start[1], YX_end[1]);
-                   }
+// 		double sph_center_x = fRand(YX_start[1], YX_end[1]);
+//                 while(sph_center_y == goal[1][1] && sph_center_x == goal[1][0])
+//                    {
+//                      sph_center_y = fRand(YX_start[0], YX_end[0]);
+//                      sph_center_x = fRand(YX_start[1], YX_end[1]);
+//                    }
                    
-		double sph_height_z = fRand(hlimit_z[0], hlimit_z[1]);
+// 		double sph_height_z = fRand(hlimit_z[0], hlimit_z[1]);
 		
-		m->body_pos[29*3-3]=sph_center_x;
-		m->body_pos[29*3-2]=sph_center_y;
-		m->body_pos[29*3-1]=sph_height_z;
+// 		m->body_pos[29*3-3]=sph_center_x;
+// 		m->body_pos[29*3-2]=sph_center_y;
+// 		m->body_pos[29*3-1]=sph_height_z;
 
-	}
+// 	}
 
 
 	void Reset()
@@ -387,8 +391,7 @@ public:
 		*/
 		//state[25] = done[0];
 		//state[26] = done[1];
-		//state[27] = cf;
-	}
+		//state[27] = cf;}
 
 	void Reward()
 	{
@@ -464,6 +467,7 @@ public:
 	
 	}
 
+	// This function has to be modified
 	int check_collision()
 	{	
 		for(int i=0;i<7;i++)

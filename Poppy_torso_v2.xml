@@ -90,7 +90,13 @@
         <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
 
         <geom pos="0 0 0" type="plane" size="3 3 .5" rgba=".7 .7 .7 1" material="MatPlane"/>
-       
+        <site name="floor_site" type = "box" pos="0 0 0" size="3 3 .0001" rgba="0.3 0.3 0.3 1"/>
+
+        <!-- <body>
+        <geom type="plane" pos="0 0.5 0.01" size =".01 .01 .01"/>
+        <site name="floor_site" pos="0 0.5 0" size=".005" rgba="0 1 1 1"/>
+        </body> -->
+
         <geom class="border" fromto="-3 3 0 3 3 0"  />
         <geom class="border" fromto="-3 -3 0 3 -3 0"  />
         <geom class="border" fromto="3 3 0 3 -3 0"  />
@@ -200,5 +206,9 @@
         <position ctrllimited="true" ctrlrange="-0.0174532925199 2.58308729295"  gear="1"  kp = "250" joint="right_elbow2_joint"/>
         <position ctrllimited="true" ctrlrange="-1.57079632679 0.00"  gear="1"  kp = "250" joint="right_wrist_joint"/>
     </actuator>
+
+    <sensor> 
+        <touch name="floor_sensor" site="floor_site"/>
+    </sensor>
 
 </mujoco>
