@@ -90,7 +90,10 @@
         <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
 
         <geom pos="0 0 0" type="plane" size="3 3 .5" rgba=".7 .7 .7 1" material="MatPlane"/>
-        <site name="floor_site" type = "box" pos="0 0 0" size="3 3 .0001" rgba="0.3 0.3 0.3 1"/>
+        <site name="floor_site1" type = "box" pos=" 0 1.5 0" size="3 1.45 .0001" rgba="0.3 0.3 0.3 1"/>
+        <site name="floor_site2" type = "box" pos=" 0 -1.5 0" size="3 1.425 .0001" rgba="0.3 0.3 0.3 1"/>
+        <site name="floor_site3" type = "box" pos="1.5 0 0" size="1.425 0.1 .0001" rgba="0.3 0.3 0.3 1"/>
+        <site name="floor_site4" type = "box" pos="-1.5 0 0" size="1.425 0.1 .0001" rgba="0.3 0.3 0.3 1"/>
 
         <!-- <body>
         <geom type="plane" pos="0 0.5 0.01" size =".01 .01 .01"/>
@@ -208,7 +211,10 @@
     </actuator>
 
     <sensor> 
-        <touch name="floor_sensor" site="floor_site"/>
+        <touch name="floor_sensor1" site="floor_site1"/>
+        <touch name="floor_sensor2" site="floor_site2"/>
+        <touch name="floor_sensor3" site="floor_site3"/>
+        <touch name="floor_sensor4" site="floor_site4"/>
     </sensor>
 
 </mujoco>

@@ -469,15 +469,12 @@ public:
 
 	// This function has to be modified
 	int check_collision()
-	{	
-		for(int i=0;i<7;i++)
-		{	
-			
+	{	for(int i =0; i <4; i++){
+
 			if(d->sensordata[i]>0)
 				return 1;
-
 		}
-	return 0;
+		return 0;
 	}
 
 	double clip(double act, int idx)
