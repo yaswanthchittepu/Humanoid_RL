@@ -1,13 +1,10 @@
 # Humanoid_RL
 RL Implementation for a Poppy Torso to pick and place objects
 
-Steps Completed:
-1. Created a Solidworks model for Poppy Torso with Grippers.
-2. Created the xml file of the Robot for use in Mujoco
-3. Fine tuned the parametes of the xml to minimize the error between control and qpos angles. The parameters kp = 250, damping = 1, and stiffness = 1 are close to the sweet spot; in this case.
-4. Created the environment for the reach phase for Poppy.
+Please note that the simulations need to be done on Mujoco, and for that you need a valid license. If you are a student, you can get a free license, using your Institution mail ID.
 
-Next Steps:
-1. Check the environment model.
-2. Train Poppy for the Reach phase using PPO or some other RL algorithm.
-
+Contents:
+1) Hardware: 
+The Solidworks parts needed to assemble the Poppy model, and the final assembly needed to expirement the Reinforcement Learning algorithm are readily available. If you just want to proceed with the same Humanoid robot, you just need to load the model XML file into Mujoco
+2) Environment: This has been implemented in both C++ and python. This contains the instructions regarding the states, actions, step, reward function, and reset states functionalities for the robot.
+3) Reinforcement Learning model: We have tested the two approaches, Deep Deterministic Policy Gradients (DDPG) and Proximal Policy Optimization (PPO). We have experienced that DDPG, though slower, converges to a optimim policy; being an off policy algorithm. PPO faces convergence issues and generally got stuck in a local optimum; being an on policy approach.
